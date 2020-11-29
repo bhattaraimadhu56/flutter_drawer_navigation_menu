@@ -6,7 +6,8 @@ import 'package:share/share.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold( 
+      // has property like appBar, drawer, body and so on
       appBar: AppBar(
           title: Text(
         "Flutter App",
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            DrawerHeader( // Drawer Head Section
               child: Container(
                 padding: EdgeInsets.fromLTRB(55, 0, 0, 0),
                 alignment: Alignment.centerRight,
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
+            // we we want to use divider between items in list view 
             new Divider(
               color: Colors.tealAccent,
               thickness: 1.0,
