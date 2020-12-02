@@ -4,12 +4,15 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
 
 class MyApp extends StatefulWidget {
-  TextEditingController nameTextEditingController = TextEditingController();
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
+  // this is part of State so define here
+  //define all state value here
+  TextEditingController nameTextEditingController = TextEditingController();
+  var name = "Change Me";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +20,10 @@ class _MyAppState extends State<MyApp> {
         //     FloatingActionButtonLocation.miniCenterFloat,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            print("Clicked the floating Action Button");
+            // print("Clicked the floating Action Button");
+            setState(() {
+              name = nameTextEditingController.text;
+            });
           },
           child: Icon(Icons.refresh),
         ),
@@ -150,8 +156,15 @@ class _MyAppState extends State<MyApp> {
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 15),
+                // Text(
+                //   "Change me",
+                //   style: TextStyle(
+                //       fontStyle: FontStyle.italic,
+                //       fontWeight: FontWeight.bold,
+                //       fontSize: 12.5),
+                // ),
                 Text(
-                  "Change the test",
+                  name,
                   style: TextStyle(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.bold,
