@@ -6,8 +6,7 @@ import 'package:share/share.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      // has property like appBar, drawer, body and so on
+    return Scaffold(
       appBar: AppBar(
           title: Text(
         "Flutter App",
@@ -18,23 +17,30 @@ class MyApp extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader( // Drawer Head Section
-              child: Container(
-                padding: EdgeInsets.fromLTRB(55, 0, 0, 0),
-                alignment: Alignment.centerRight,
-                color: Colors.tealAccent,
-                child: Center(
-                  child: Text(
-                    "Drawer and Navigation",
-                    style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 30.0,
-                    ),
-                  ),
-                ),
+            // DrawerHeader(
+            //   child: Container(
+            //     padding: EdgeInsets.fromLTRB(55, 0, 0, 0),
+            //     alignment: Alignment.centerRight,
+            //     color: Colors.tealAccent,
+            //     child: Center(
+            //       child: Text(
+            //         "Drawer and Navigation",
+            //         style: TextStyle(
+            //           color: Colors.black54,
+            //           fontSize: 30.0,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            UserAccountsDrawerHeader(
+              accountName: Text("Madhu Sudan Bhattarai"),
+              accountEmail: Text("bhattaraimadhu56@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1598547461182-45d03f6661e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"),
               ),
             ),
-            // we we want to use divider between items in list view 
             new Divider(
               color: Colors.tealAccent,
               thickness: 1.0,
@@ -47,6 +53,7 @@ class MyApp extends StatelessWidget {
               },
               leading: Icon(Icons.home), // give icon on left side
               title: Text("Madhu Home Page"), // write text here
+              subtitle: Text("This is the home Page"),
               trailing:
                   Icon(Icons.access_alarm_outlined), // gives icon on right side
             ),
@@ -67,6 +74,7 @@ class MyApp extends StatelessWidget {
               },
               leading: Icon(Icons.info), // give icon on left side
               title: Text("About Page"), // write text here
+              subtitle: Text("This is the aboutus Page"),
               trailing: Icon(Icons.info_outlined), // gives icon on right side
             ),
             new Divider(
@@ -88,6 +96,7 @@ class MyApp extends StatelessWidget {
 
               leading: Icon(Icons.star), // give icon on left side
               title: Text("Rate"), // write text here
+              subtitle: Text("This is the rating Page"),
               trailing: Icon(Icons.star_outlined), // gives icon on right side
             ),
             new Divider(
@@ -102,11 +111,11 @@ class MyApp extends StatelessWidget {
                 //then use package at top of this page
                 //import 'package:share/share.dart';
 
-                Share.share(
-                    "Hi, You can share the information ");
+                Share.share("Hi, You can share the information ");
               },
               leading: Icon(Icons.share), // give icon on left side
               title: Text("Share"), // write text here
+              subtitle: Text("This is sharing tab"),
               trailing: Icon(Icons.share_rounded), // gives icon on right side
             ),
             new Divider(
