@@ -3,8 +3,13 @@ import "./AboutPage.dart";
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share/share.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   TextEditingController nameTextEditingController = TextEditingController();
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
