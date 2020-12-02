@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/screens/Images.dart';
 
 class ChangeName extends StatelessWidget {
   const ChangeName({
@@ -14,10 +15,7 @@ class ChangeName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image(
-          image: AssetImage("images/bg_images.jpg"),
-          fit: BoxFit.cover,
-        ),
+        Images(), //our defined images
         SizedBox(height: 15),
         // Text(
         //   "Change me",
@@ -39,8 +37,7 @@ class ChangeName extends StatelessWidget {
             controller: nameTextEditingController,
             textInputAction: TextInputAction
                 .next, // Move  focus and cursor to next input or tab
-            keyboardType:
-                TextInputType.text, // prefer text type from keyboard
+            keyboardType: TextInputType.text, // prefer text type from keyboard
             obscureText: true, // to hide text
             decoration: InputDecoration(
                 labelText: "Name", // to show Name Label
@@ -49,12 +46,6 @@ class ChangeName extends StatelessWidget {
           ),
         ),
         SizedBox(height: 15),
-        Image(
-            image: NetworkImage(
-                "https://images.unsplash.com/photo-1592166759268-7b20962eb956?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"),
-            fit: BoxFit.contain,
-            height: 200,
-            width: 300),
       ],
     );
   }
